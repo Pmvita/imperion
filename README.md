@@ -1,15 +1,15 @@
 # Imperion
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://imperion-seven.vercel.app)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://imperion-bank.vercel.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org)
-[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://imperion-seven.vercel.app)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://imperion-bank.vercel.app)
 [![Supabase](https://img.shields.io/badge/Backend-Supabase-3ECF8E?logo=supabase)](https://supabase.com)
 
 A unified financial super-app combining neobank, payments, and crypto features into a single account — one identity, one balance, across web and mobile.
 
-**Live demo:** https://imperion-seven.vercel.app
+**Live demo:** https://imperion-bank.vercel.app
 
 ## Overview
 
@@ -105,7 +105,7 @@ npm run lint       # ESLint
 
 ## Deployment
 
-Deployed on Vercel: https://imperion-seven.vercel.app
+Deployed on Vercel: https://imperion-bank.vercel.app
 
 To deploy your own:
 
