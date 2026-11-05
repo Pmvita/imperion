@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Imperion — Unified Financial Super-App
 
-## Getting Started
+A production-grade financial super-app combining neobank, payments, and crypto features
+into a single unified account. Web (Next.js 16) + shared Supabase backend.
 
-First, run the development server:
+## Stack
+- Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4
+- Supabase (PostgreSQL + RLS + Auth) — project `nzrkwmbaktjrokwesofu` (us-east-1)
+- Zustand / React Query
+- Vitest (unit)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Setup
+1. `.env.local` already contains Supabase URL + anon key.
+2. `npm install`
+3. `npm run dev` (http://localhost:3000)
+4. `npm run build` to verify production build.
+5. `npm test` (Vitest)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Schema
+Tables: profiles, accounts, balances, transactions, cards, wallets, kyc_documents, notifications, devices.
+RLS enabled per-user. Profile + fiat/crypto accounts auto-created on signup with seeded balances.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features (current)
+- Auth (email/password signup + login)
+- Dashboard with multi-currency balances + recent activity
+- Money (P2P send)
+- Cards (list, freeze/unfreeze)
+- Crypto (portfolio, wallets, connect)
+- Settings (sign out)
+- Notifications
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+Provider integrations (Stripe issuing, WalletConnect, KYC vendor) are scaffolded at the
+data-model/UI level; wire real credentials in production.
