@@ -2,7 +2,7 @@
 
 A unified financial super-app combining neobank, payments, and crypto features into a single account — one identity, one balance, across web and mobile.
 
-**Live demo:** https://superfin-app.vercel.app
+**Live demo:** https://imperion-seven.vercel.app
 
 ## Overview
 
@@ -98,7 +98,7 @@ npm run lint       # ESLint
 
 ## Deployment
 
-Deployed on Vercel: https://superfin-app.vercel.app
+Deployed on Vercel: https://imperion-seven.vercel.app
 
 To deploy your own:
 
