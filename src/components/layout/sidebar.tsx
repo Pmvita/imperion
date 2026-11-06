@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Wallet, CreditCard, Coins, Settings, Bell } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Home, Wallet, CreditCard, Coins, Settings } from "lucide-react";
 
 const items = [
   { href: "/dashboard", label: "Dashboard", icon: Home },
@@ -15,21 +14,27 @@ const items = [
 export function Sidebar() {
   const pathname = usePathname();
   return (
-    <aside className="hidden md:flex w-64 flex-col border-r border-border bg-card">
-      <div className="flex h-16 items-center px-6 text-xl font-bold">
-        <span className="text-accent">Imperion</span>
+    <aside style={{ width: "240px", background: "#000", color: "#fff", display: "flex", flexDirection: "column", minHeight: "100vh" }} className="hidden md:flex">
+      <div className="spartan" style={{ padding: "1.5rem", fontSize: "1.5rem", letterSpacing: "-0.04em" }}>
+        Imperion
       </div>
-      <nav className="flex-1 px-3 py-4 space-y-1">
+      <nav style={{ flex: 1, padding: "1rem 0.75rem", display: "flex", flexDirection: "column", gap: "0.25rem" }}>
         {items.map((it) => {
           const active = pathname?.startsWith(it.href);
           return (
             <Link
               key={it.href}
               href={it.href}
-              className={cn(
-                "flex items-center gap-3 rounded-lg px-3 py-2 text-sm",
-                active ? "bg-accent/15 text-accent" : "text-muted-foreground hover:bg-muted hover:text-foreground"
-              )}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.75rem",
+                padding: "0.75rem 1rem",
+                textDecoration: "none",
+                color: active ? "#d0106f" : "#fff",
+                fontWeight: active ? 700 : 400,
+                background: active ? "rgba(208,16,111,0.12)" : "transparent",
+              }}
             >
               <it.icon size={18} />
               {it.label}
@@ -37,7 +42,7 @@ export function Sidebar() {
           );
         })}
       </nav>
-      <div className="p-4 text-xs text-muted-foreground">v0.1.0 · Imperion</div>
+      <div style={{ padding: "1rem 1.5rem", fontSize: "0.75rem", color: "#888" }}>v0.1.0</div>
     </aside>
   );
 }

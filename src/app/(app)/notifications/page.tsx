@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
-import { Card, CardTitle } from "@/components/ui/card";
 
 export default function NotificationsPage() {
   const [items, setItems] = useState<any[]>([]);
@@ -13,17 +12,17 @@ export default function NotificationsPage() {
     })();
   }, []);
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Notifications</h1>
-      <Card>
-        {items.length === 0 && <p className="text-sm text-muted-foreground">You're all caught up.</p>}
+    <div>
+      <h1 className="spartan" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "2rem" }}>Notifications</h1>
+      <div style={{ background: "#fff", border: "2px solid #000", padding: "2rem" }}>
+        {items.length === 0 && <p style={{ color: "#666662" }}>You're all caught up.</p>}
         {items.map((n) => (
-          <div key={n.id} className="border-b border-border py-3 last:border-0">
-            <div className="text-sm font-medium">{n.title}</div>
-            <div className="text-xs text-muted-foreground">{n.body}</div>
+          <div key={n.id} style={{ padding: "1rem 0", borderBottom: "1px solid #ebebe8" }}>
+            <div style={{ fontWeight: 600 }}>{n.title}</div>
+            <div style={{ fontSize: "0.875rem", color: "#666662" }}>{n.body}</div>
           </div>
         ))}
-      </Card>
+      </div>
     </div>
   );
 }

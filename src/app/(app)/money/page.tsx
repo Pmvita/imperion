@@ -1,9 +1,6 @@
 "use client";
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
-import { Card, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { formatMoney } from "@/lib/utils";
 
 export default function MoneyPage() {
   const [recipient, setRecipient] = useState("");
@@ -29,26 +26,28 @@ export default function MoneyPage() {
     setStatus(error ? error.message : "Sent!");
   }
 
+  const inputStyle = { width: "100%", border: "2px solid #000", padding: "0.875rem 1rem", fontSize: "1rem", marginBottom: "1rem", background: "#f7f7f5" };
+
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Money</h1>
-      <Card>
-        <CardTitle>Send money</CardTitle>
-        <div className="mt-3 space-y-3">
-          <input placeholder="Recipient email or phone" value={recipient} onChange={(e) => setRecipient(e.target.value)} className="w-full rounded-lg border border-border bg-card px-4 py-3" />
-          <input type="number" placeholder="Amount (USD)" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full rounded-lg border border-border bg-card px-4 py-3" />
-          <Button onClick={send} className="w-full">Send</Button>
-          {status && <p className="text-sm text-muted-foreground">{status}</p>}
-        </div>
-      </Card>
-      <Card>
-        <CardTitle>Quick actions</CardTitle>
-        <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4">
+    <div>
+      <h1 className="spartan" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "2rem" }}>Money</h1>
+      <div style={{ background: "#bbf697", border: "2px solid #000", padding: "2rem", marginBottom: "1.5rem" }}>
+        <h2 className="spartan" style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>Send money</h2>
+        <input placeholder="Recipient email or phone" value={recipient} onChange={(e) => setRecipient(e.target.value)} style={inputStyle} />
+        <input type="number" placeholder="Amount (USD)" value={amount} onChange={(e) => setAmount(e.target.value)} style={inputStyle} />
+        <button onClick={send} style={{ width: "100%", background: "#d0106f", color: "#fff", border: "none", padding: "0.875rem", fontSize: "1rem", fontWeight: 700, cursor: "pointer" }}>
+          Send
+        </button>
+        {status && <p style={{ marginTop: "1rem", fontSize: "0.875rem" }}>{status}</p>}
+      </div>
+      <div style={{ background: "#fff", border: "2px solid #000", padding: "2rem" }}>
+        <h2 className="spartan" style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>Quick actions</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0.75rem" }}>
           {["Request", "Exchange", "Direct deposit", "Vaults"].map((a) => (
-            <button key={a} className="rounded-lg bg-muted p-4 text-sm font-medium hover:bg-muted/70">{a}</button>
+            <button key={a} style={{ background: "#f7f7f5", border: "2px solid #000", padding: "1.25rem", fontSize: "1rem", fontWeight: 600, cursor: "pointer" }}>{a}</button>
           ))}
         </div>
-      </Card>
+      </div>
     </div>
   );
 }

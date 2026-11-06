@@ -1,19 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b0f14;
-  --foreground: #e6eaf0;
-  --card: #121821;
-  --card-foreground: #e6eaf0;
-  --muted: #1a2230;
-  --muted-foreground: #8a94a6;
-  --accent: #ff6a1a;
+  --background: #f7f7f5;
+  --foreground: #000000;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --muted: #ebebe8;
+  --muted-foreground: #666662;
+  --accent: #d0106f;
   --accent-foreground: #ffffff;
-  --border: #1f2937;
-  --ring: #3b82f6;
+  --border: #000000;
+  --ring: #d0106f;
   --success: #22c55e;
   --danger: #ef4444;
-  --font-sans: var(--font-inter);
+  --field-1: #97aaf6;
+  --field-2: #bbf697;
+  --field-3: #fed878;
+  --field-4: #6ef8fb;
+  --font-sans: var(--font-figtree);
+  --font-display: var(--font-spartan);
   --font-mono: var(--font-mono);
 }
 
@@ -30,18 +35,13 @@
   --color-ring: var(--ring);
   --color-success: var(--success);
   --color-danger: var(--danger);
+  --color-field-1: var(--field-1);
+  --color-field-2: var(--field-2);
+  --color-field-3: var(--field-3);
+  --color-field-4: var(--field-4);
   --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
   --font-mono: var(--font-mono);
-}
-
-.light {
-  --background: #f5f7fa;
-  --foreground: #0b0f14;
-  --card: #ffffff;
-  --card-foreground: #0b0f14;
-  --muted: #eef2f7;
-  --muted-foreground: #5b6472;
-  --border: #d9e0ea;
 }
 
 body {
